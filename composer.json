@@ -2,7 +2,18 @@
   "name": "mageplaza/magento-2-blog-extension",
   "description": "Magento 2 Blog extension",
   "require": {
-    "mageplaza/module-core": "^1.5.2"
+    "mageplaza/module-core": "^1.5.2",
+    "magento/module-customer": "*",
+    "magento/module-rss": "*",
+    "magento/module-store": "*",
+    "magento/module-backend": "*",
+    "magento/module-ui": "*",
+    "magento/module-sitemap": "*",
+    "magento/module-config": "*",
+    "magento/module-cms": "*",
+    "magento/module-catalog": "*",
+    "magento/module-configurable-product": "*",
+    "magento/module-directory": "*"
   },
   "type": "magento2-module",
   "version": "4.1.6",

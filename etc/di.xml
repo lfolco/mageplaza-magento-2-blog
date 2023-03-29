@@ -84,4 +84,10 @@
     <preference for="Mageplaza\Blog\Api\Data\SearchResult\TagSearchResultInterface" type="Mageplaza\Blog\Model\ResourceModel\Tag\Collection" />
     <preference for="Mageplaza\Blog\Api\Data\SearchResult\TopicSearchResultInterface" type="Mageplaza\Blog\Model\ResourceModel\Topic\Collection" />
     <preference for="Mageplaza\Blog\Api\Data\SearchResult\CommentSearchResultInterface" type="Mageplaza\Blog\Model\ResourceModel\Comment\Collection" />
+    <!-- aes: fixes https://github.com/mageplaza/magento-2-blog/issues/337 -->
+    <type name="Mageplaza\Blog\Helper\Data">
+        <arguments>
+            <argument name="customerSession" xsi:type="object">Magento\Customer\Model\Session\Proxy</argument>
+        </arguments>
+    </type>
 </config>
