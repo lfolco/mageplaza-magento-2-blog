@@ -16,7 +16,6 @@
     "magento/module-directory": "*"
   },
   "type": "magento2-module",
-  "version": "4.1.7",
   "license": "proprietary",
   "keywords": [
     "magento 2",
