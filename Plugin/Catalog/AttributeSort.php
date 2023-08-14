@@ -59,7 +59,7 @@ class AttributeSort
         Collection $productCollection,
         callable $proceed,
         $attribute,
-        $dir
+        $dir = 'ASC' // aes fix for https://github.com/mageplaza/magento-2-blog/issues/285
     ) {
         if ($attribute === 'position' &&
             in_array(
