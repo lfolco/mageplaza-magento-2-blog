@@ -16,8 +16,8 @@
     <column xsi:type="text" name="meta_description" nullable="true" comment="Post Meta Description"/>
     <column xsi:type="text" name="meta_keywords" nullable="true" comment="Post Meta Keywords"/>
     <column xsi:type="text" name="meta_robots" nullable="true"/>
-    <column xsi:type="timestamp" name="updated_at" on_update="false" nullable="true"/>
-    <column xsi:type="timestamp" name="created_at" on_update="false" nullable="true"/>
+    <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" comment="Updated At"/>
+    <column xsi:type="timestamp" name="created_at" on_update="false" default="CURRENT_TIMESTAMP" nullable="false"/>
     <column xsi:type="int" name="author_id" padding="10" unsigned="true" nullable="true" identity="false" comment="Author ID"/>
     <column xsi:type="int" name="modifier_id" padding="10" unsigned="true" nullable="true" identity="false" comment="Modifier ID"/>
     <column xsi:type="timestamp" name="publish_date" on_update="false" nullable="true"/>
@@ -35,8 +35,8 @@
     <column xsi:type="text" name="description" nullable="true" comment="Tag Description"/>
     <column xsi:type="text" name="store_ids" nullable="false" comment="Store Id"/>
     <column xsi:type="int" name="enabled" padding="11" unsigned="false" nullable="true" identity="false" comment="Tag Enabled"/>
-    <column xsi:type="timestamp" name="updated_at" on_update="false" nullable="true"/>
-    <column xsi:type="timestamp" name="created_at" on_update="false" nullable="true"/>
+    <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" comment="Updated At"/>
+    <column xsi:type="timestamp" name="created_at" on_update="false" default="CURRENT_TIMESTAMP" nullable="false"/>
     <column xsi:type="varchar" name="meta_title" nullable="true" length="255" comment="Post Meta Title"/>
     <column xsi:type="text" name="meta_description" nullable="true" comment="Post Meta Description"/>
     <column xsi:type="text" name="meta_keywords" nullable="true" comment="Post Meta Keywords"/>
@@ -57,8 +57,8 @@
     <column xsi:type="text" name="meta_description" nullable="true" comment="Topic Meta Description"/>
     <column xsi:type="text" name="meta_keywords" nullable="true" comment="Topic Meta Keywords"/>
     <column xsi:type="text" name="meta_robots" nullable="true"/>
-    <column xsi:type="timestamp" name="updated_at" on_update="false" nullable="true"/>
-    <column xsi:type="timestamp" name="created_at" on_update="false" nullable="true"/>
+    <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" comment="Updated At"/>
+    <column xsi:type="timestamp" name="created_at" on_update="false" default="CURRENT_TIMESTAMP" nullable="false"/>
     <column xsi:type="text" name="import_source" nullable="true" comment="Import Source"/>
     <constraint xsi:type="primary" referenceId="PRIMARY">
       <column name="topic_id"/>
@@ -80,8 +80,8 @@
     <column xsi:type="int" name="position" padding="11" unsigned="false" nullable="true" identity="false" comment="Category Position"/>
     <column xsi:type="int" name="level" padding="11" unsigned="false" nullable="true" identity="false" comment="Category Level"/>
     <column xsi:type="int" name="children_count" padding="11" unsigned="false" nullable="true" identity="false" comment="Category Children Count"/>
-    <column xsi:type="timestamp" name="updated_at" on_update="false" nullable="true"/>
-    <column xsi:type="timestamp" name="created_at" on_update="false" nullable="true"/>
+    <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" comment="Updated At"/>
+    <column xsi:type="timestamp" name="created_at" on_update="false" default="CURRENT_TIMESTAMP" nullable="false"/>
     <column xsi:type="text" name="import_source" nullable="true" comment="Import Source"/>
     <constraint xsi:type="primary" referenceId="PRIMARY">
       <column name="category_id"/>
@@ -173,8 +173,8 @@
     <column xsi:type="int" name="user_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Author ID" onCreate="migrateDataFrom(user_id)"/>
     <column xsi:type="varchar" name="name" nullable="true" length="255" comment="Display Name"/>
     <column xsi:type="varchar" name="url_key" nullable="true" length="255" comment="Author URL Key"/>
-    <column xsi:type="timestamp" name="updated_at" on_update="false" nullable="true" comment="Author Updated At"/>
-    <column xsi:type="timestamp" name="created_at" on_update="false" nullable="true" default="CURRENT_TIMESTAMP" comment="Author Created At"/>
+    <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" comment="Updated At"/>
+    <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Author Created At"/>
     <column xsi:type="varchar" name="image" nullable="true" length="255" comment="Author Image"/>
     <column xsi:type="text" name="short_description" nullable="true" comment="Author Short Description"/>
     <column xsi:type="varchar" name="facebook_link" nullable="true" length="255" comment="Facebook Link"/>
@@ -202,7 +202,7 @@
     <column xsi:type="smallint" name="is_reply" padding="5" unsigned="true" nullable="false" identity="false" default="0" comment="Is reply comment"/>
     <column xsi:type="int" name="reply_id" padding="10" unsigned="true" nullable="true" identity="false" default="0" comment="Reply ID"/>
     <column xsi:type="text" name="content" nullable="true"/>
-    <column xsi:type="timestamp" name="created_at" nullable="true" on_update="false"/>
+    <column xsi:type="timestamp" name="created_at" on_update="false" default="CURRENT_TIMESTAMP" nullable="false"/>
     <column xsi:type="smallint" name="status" padding="5" unsigned="true" nullable="false" identity="false" default="3" comment="Status"/>
     <column xsi:type="text" name="store_ids" nullable="false" comment="Store Id"/>
     <column xsi:type="text" name="user_name" nullable="true" comment="User Name"/>
@@ -284,8 +284,8 @@
     <column xsi:type="text" name="meta_description" nullable="true" comment="Post Meta Description"/>
     <column xsi:type="text" name="meta_keywords" nullable="true" comment="Post Meta Keywords"/>
     <column xsi:type="text" name="meta_robots" nullable="true" comment="Post Meta Robots"/>
-    <column xsi:type="timestamp" name="updated_at" on_update="false" nullable="true" comment="Post Updated At"/>
-    <column xsi:type="timestamp" name="created_at" on_update="false" nullable="true" comment="Post Created At"/>
+    <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" comment="Updated At"/>
+    <column xsi:type="timestamp" name="created_at" on_update="false" default="CURRENT_TIMESTAMP" nullable="false"/>
     <column xsi:type="int" name="author_id" padding="10" unsigned="true" nullable="false" identity="false" comment="Author ID"/>
     <column xsi:type="int" name="modifier_id" padding="10" unsigned="true" nullable="false" identity="false" comment="Modifier ID"/>
     <column xsi:type="timestamp" name="publish_date" on_update="false" nullable="true" comment="Publish Date"/>

@@ -190,10 +190,11 @@ class Post extends AbstractDb
             $object->setStoreIds(implode(',', $object->getStoreIds()));
         }
 
-        $object->setUrlKey(
-            $this->helperData->generateUrlKey($this, $object, $object->getUrlKey() ?: $object->getName())
-        );
-
+        if (!$object->getUrlKey()) {
+            $object->setUrlKey(
+                $this->helperData->generateUrlKey($this, $object, $object->getUrlKey() ?: $object->getName())
+            );
+        }
         return $this;
     }
 

@@ -82,10 +82,11 @@ class Author extends AbstractDb
      */
     protected function _beforeSave(AbstractModel $object)
     {
-        $object->setUrlKey(
-            $this->helperData->generateUrlKey($this, $object, $object->getUrlKey() ?: $object->getName())
-        );
-
+        if (!$object->getUrlKey()) {
+            $object->setUrlKey(
+                $this->helperData->generateUrlKey($this, $object, $object->getUrlKey() ?: $object->getName())
+            );
+        }
         if (!$object->isObjectNew()) {
             $timeStamp = $this->dateTime->gmtDate();
             $object->setUpdatedAt($timeStamp);
