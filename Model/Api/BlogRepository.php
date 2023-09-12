@@ -214,6 +214,12 @@ class BlogRepository implements BlogRepositoryInterface
             ->addFieldToFilter('author_id', $authorId)->getItems();
     }
 
+    public function getPostViewByCustomerId($customerId)
+    {
+        return $this->_helperData->getFactoryByType()->create()->getCollection()
+            ->addFieldToFilter('customer_id', $customerId)->getItems();
+    }
+
     /**
      * @inheritDoc
      */

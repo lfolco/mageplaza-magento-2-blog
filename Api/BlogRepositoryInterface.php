@@ -74,6 +74,13 @@ interface BlogRepositoryInterface
     public function getPostViewByAuthorId($authorId);
 
     /**
+     * @param string $customerId
+     *
+     * @return \Mageplaza\Blog\Api\Data\PostInterface[]
+     */
+    public function getPostViewByCustomerId($customerId);
+
+    /**
      * @param string $postId
      *
      * @return \Mageplaza\Blog\Api\Data\CommentInterface[]
