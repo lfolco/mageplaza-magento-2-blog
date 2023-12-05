@@ -26,5 +26,5 @@ $_post = $block->getPost();
 <meta property="og:url"             content="<?= /* @noEscape */ $_post->getUrl() ?>" />
 <meta property="og:title"           content="<?= /* @noEscape */ $_post->getName() ?>" />
 <meta property="og:image"           content="<?= /* @noEscape */ $block->getImageUrl($_post->getImage()) ?>" />
-<meta property="og:description"    content="<?= /* @noEscape */ $_post->getShortDescription() ?>" />
+<meta property="og:description"    content="<?= /* @noEscape */ $_post->getMetaDescription() ?>" />
 <!--End Open Graph Meta tags by Mageplaza-->

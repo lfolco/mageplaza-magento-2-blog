@@ -106,7 +106,7 @@ class Product extends Extended implements TabInterface
         /** @var Collection $collection */
         $collection = $this->productCollectionFactory->create();
         $collection->clear();
-
+        $collection->addAttributeToSelect('name');
         $collection->getSelect()->joinLeft(
             ['mp_p' => $collection->getTable('mageplaza_blog_post_product')],
             'e.entity_id = mp_p.entity_id',
@@ -143,6 +143,12 @@ class Product extends Extended implements TabInterface
         $this->addColumn('title', [
             'header'           => __('Sku'),
             'index'            => 'sku',
+            'header_css_class' => 'col-name',
+            'column_css_class' => 'col-name'
+        ]);
+        $this->addColumn('name', [
+            'header'           => __('Name'),
+            'index'            => 'name',
             'header_css_class' => 'col-name',
             'column_css_class' => 'col-name'
         ]);
