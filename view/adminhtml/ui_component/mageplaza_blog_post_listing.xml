@@ -189,37 +189,12 @@
                 </item>
             </argument>
         </column>
-        <column name="layout">
+        <column name="author_id">
             <argument name="data" xsi:type="array">
-                <item name="options" xsi:type="object">Magento\Cms\Model\Page\Source\PageLayout</item>
+                <item name="options" xsi:type="object">Mageplaza\Blog\Model\Config\Source\Author</item>
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">select</item>
-                    <item name="label" xsi:type="string" translate="true">Layout</item>
-                    <item name="editor" xsi:type="string">select</item>
-                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/select</item>
-                    <item name="dataType" xsi:type="string">select</item>
-                </item>
-            </argument>
-        </column>
-        <column name="in_rss">
-            <argument name="data" xsi:type="array">
-                <item name="options" xsi:type="object">Magento\Config\Model\Config\Source\Yesno</item>
-                <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">select</item>
-                    <item name="label" xsi:type="string" translate="true">In RSS</item>
-                    <item name="editor" xsi:type="string">select</item>
-                    <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/select</item>
-                    <item name="dataType" xsi:type="string">select</item>
-                </item>
-            </argument>
-        </column>
-        <column name="allow_comment">
-            <argument name="data" xsi:type="array">
-                <item name="options" xsi:type="object">Magento\Config\Model\Config\Source\Yesno</item>
-                <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">select</item>
-                    <item name="label" xsi:type="string" translate="true">Allow Comment</item>
-                    <item name="editor" xsi:type="string">select</item>
+                    <item name="label" xsi:type="string" translate="true">Author</item>
                     <item name="component" xsi:type="string">Magento_Ui/js/grid/columns/select</item>
                     <item name="dataType" xsi:type="string">select</item>
                 </item>
