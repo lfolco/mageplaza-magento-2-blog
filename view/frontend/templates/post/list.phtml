@@ -83,8 +83,8 @@ use Magento\Framework\Escaper;
     <?php endif; ?>
     <?= $block->getChildHtml('additional'); ?>
 </div>
-<script>
-    require(['jquery'], function ($) {
-        $('.limiter').css('float', 'right');
-    });
-</script>
+<style>
+    .limiter {
+        float: right;
+    }
+</style>
