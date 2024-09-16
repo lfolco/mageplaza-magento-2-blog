@@ -2,7 +2,8 @@
   "name": "mageplaza/magento-2-blog-extension",
   "description": "Magento 2 Blog extension",
   "require": {
-    "mageplaza/module-core": "^1.5.3",
+    "mageplaza/module-core": "^1.5.7",
+    "mageplaza/facebook-graph-sdk": "^1.0.1",
     "magento/module-customer": "*",
     "magento/module-rss": "*",
     "magento/module-store": "*",
@@ -16,6 +17,7 @@
     "magento/module-directory": "*"
   },
   "type": "magento2-module",
+  "version": "4.2.4",
   "license": "proprietary",
   "keywords": [
     "magento 2",

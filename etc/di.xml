@@ -64,7 +64,6 @@
             </argument>
         </arguments>
     </type>
-    <preference for="Magento\Sitemap\Model\Sitemap" type="Mageplaza\Blog\Model\Sitemap"/>
 
     <preference for="Mageplaza\Blog\Api\Data\PostInterface" type="Mageplaza\Blog\Model\Post" />
     <preference for="Mageplaza\Blog\Api\Data\CommentInterface" type="Mageplaza\Blog\Model\Comment" />
@@ -84,7 +83,7 @@
     <preference for="Mageplaza\Blog\Api\Data\SearchResult\TagSearchResultInterface" type="Mageplaza\Blog\Model\ResourceModel\Tag\Collection" />
     <preference for="Mageplaza\Blog\Api\Data\SearchResult\TopicSearchResultInterface" type="Mageplaza\Blog\Model\ResourceModel\Topic\Collection" />
     <preference for="Mageplaza\Blog\Api\Data\SearchResult\CommentSearchResultInterface" type="Mageplaza\Blog\Model\ResourceModel\Comment\Collection" />
-    <!-- aes: fixes https://github.com/mageplaza/magento-2-blog/issues/337 -->
+    <!-- aes: fixes install error -->
     <type name="Mageplaza\Blog\Helper\Data">
         <arguments>
             <argument name="customerSession" xsi:type="object">Magento\Customer\Model\Session\Proxy</argument>
