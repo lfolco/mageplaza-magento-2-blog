@@ -43,7 +43,9 @@ class Listpost extends Frontend
         $collection = $this->getCollection();
 
         if ($collection && $collection->getSize()) {
-            $pager = $this->getLayout()->createBlock(Pager::class, 'mpblog.post.pager');
+            // aes change: duplicate block name error when calling collection multiple times
+            $pagerName = sprintf('mpblog.post.pager.%s', mt_rand());
+            $pager = $this->getLayout()->createBlock(Pager::class, $pagerName);
 
             $perPageValues = (string) $this->helperData
                 ->getDisplayConfig('pagination', $this->store->getStore()->getId());
