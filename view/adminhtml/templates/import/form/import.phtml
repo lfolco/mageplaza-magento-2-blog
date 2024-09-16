@@ -20,8 +20,10 @@
  */
 
 use Mageplaza\Blog\Block\Adminhtml\Import\Edit\Import;
+use Magento\Framework\Escaper;
 
 /** @var Import $block */
+/** @var Escaper $escaper */
 ?>
 <script>
     require(['jquery'], function ($) {
@@ -38,7 +40,7 @@ use Mageplaza\Blog\Block\Adminhtml\Import\Edit\Import;
             typeSelector: <?= /** noEscape */ $block->getTypeSelector() ?>,
             initImportFieldsSet: function () {
                 for (var i = 0; i < this.typeSelector.length; i++){
-                    if ($('#import_type').attr("value") === this.typeSelector[i]) {
+                    if ($('#import_type').val() === this.typeSelector[i]) {
                         this.showFieldSet('#' + this.typeSelector[i] + '_fieldset');
                         dataImport = {
                             type: this.typeSelector[i],
@@ -85,11 +87,12 @@ use Mageplaza\Blog\Block\Adminhtml\Import\Edit\Import;
             initImportCheckConnection: function () {
                 if ($('#edit_form').valid()) {
                     $('body').loader('show');
+                    var url = '<?= $escaper->escapeUrl($block->getUrl(
+                        'mageplaza_blog/import/validate',
+                        ['form_key' => $block->getFormKey()]
+                    )) ?>';
                     $.ajax({
-                        url: '<?= $block->escapeUrl($block->getUrl(
-                            'mageplaza_blog/import/validate',
-                            ['form_key' => $block->getFormKey()]
-                        )) ?>',
+                        url: url,
                         data: {
                             type: dataImport.type,
                             import_name: $(dataImport.importName).val(),
@@ -133,7 +136,7 @@ use Mageplaza\Blog\Block\Adminhtml\Import\Edit\Import;
             importAction: function () {
                 $('body').loader('show');
                 $.ajax({
-                    url: '<?= $block->escapeUrl($block->getUrl(
+                    url: '<?= $escaper->escapeUrl($block->getUrl(
                         'mageplaza_blog/import/import',
                         ['form_key' => $block->getFormKey()]
                     ))?>',
